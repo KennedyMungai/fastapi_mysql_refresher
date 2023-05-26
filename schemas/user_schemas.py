@@ -1,6 +1,8 @@
 """Created the Schema file for the Users"""
-from pydantic import BaseModel, EmailStr
 from typing import List
+
+from pydantic import BaseModel, EmailStr
+
 from schemas.article_schemas import Article
 
 
