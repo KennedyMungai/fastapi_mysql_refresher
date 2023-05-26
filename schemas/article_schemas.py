@@ -14,3 +14,12 @@ class ArticleBase(BaseModel):
     """
     title: str
     body: Optional[str] = None
+    
+
+class ArticleCreate(ArticleBase):
+    """The schema for creating articles
+
+    Args:
+        ArticleBase (Pydantic): The base schema for the articles
+    """
+    pass
