@@ -13,8 +13,8 @@ class UserBase(BaseModel):
         BaseModel (Pydantic): The parent class for the Models
     """
     email: EmailStr
-    
-    
+
+
 class UserCreate(UserBase):
     """The model for the user creation
 
@@ -22,8 +22,8 @@ class UserCreate(UserBase):
         UserBase (UserBase): The parent class for the models
     """
     password: str
-    
-    
+
+
 class User(UserBase):
     """The User Model
 
@@ -33,7 +33,7 @@ class User(UserBase):
     id: int
     is_active: bool
     articles: List[Article]
-    
+
     class Config:
         """The config class"""
         orm_mode = True
