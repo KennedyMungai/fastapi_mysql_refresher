@@ -39,3 +39,17 @@ class Article(ArticleBase):
     class Config:
         """The config for the model"""
         orm_mode = True
+        
+        
+class ArticleUpdate(BaseModel):
+    """The schema for updating articles
+
+    Args:
+        BaseModel (Pydantic): The base schema for the articles
+    """
+    title: Optional[str] = None
+    body: Optional[str] = None
+    
+    class Config:
+        """The config for the model"""
+        orm_mode = True
