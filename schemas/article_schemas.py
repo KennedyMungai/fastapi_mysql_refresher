@@ -23,3 +23,19 @@ class ArticleCreate(ArticleBase):
         ArticleBase (Pydantic): The base schema for the articles
     """
     pass
+
+
+class Article(ArticleBase):
+    """The model for the db data
+
+    Args:
+        ArticleBase (Base Article class): The base for all Article Schemas
+    """
+    id: int
+    author: EmailStr
+    created_at: datetime
+    updated_at: datetime
+    
+    class Config:
+        """The config for the model"""
+        orm_mode = True
