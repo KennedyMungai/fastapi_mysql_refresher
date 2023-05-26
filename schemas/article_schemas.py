@@ -14,7 +14,7 @@ class ArticleBase(BaseModel):
     """
     title: str
     body: Optional[str] = None
-    
+
 
 class ArticleCreate(ArticleBase):
     """The schema for creating articles
@@ -35,12 +35,12 @@ class Article(ArticleBase):
     author: EmailStr
     created_at: datetime
     updated_at: datetime
-    
+
     class Config:
         """The config for the model"""
         orm_mode = True
-        
-        
+
+
 class ArticleUpdate(BaseModel):
     """The schema for updating articles
 
@@ -49,7 +49,7 @@ class ArticleUpdate(BaseModel):
     """
     title: Optional[str] = None
     body: Optional[str] = None
-    
+
     class Config:
         """The config for the model"""
         orm_mode = True
