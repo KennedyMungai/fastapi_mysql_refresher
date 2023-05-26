@@ -1,5 +1,7 @@
 """Created the Schema file for the Users"""
 from pydantic import BaseModel, EmailStr
+from typing import List
+from schemas.article_schemas import Article
 
 
 class UserBase(BaseModel):
@@ -18,3 +20,18 @@ class UserCreate(UserBase):
         UserBase (UserBase): The parent class for the models
     """
     password: str
+    
+    
+class User(UserBase):
+    """The User Model
+
+    Args:
+        UserBase (Pydantic): The parent class for the models
+    """
+    id: int
+    is_active: bool
+    articles: List[Article]
+    
+    class Config:
+        """The config class"""
+        orm_mode = True
