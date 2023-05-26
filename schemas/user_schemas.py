@@ -9,3 +9,12 @@ class UserBase(BaseModel):
         BaseModel (Pydantic): The parent class for the Models
     """
     email: EmailStr
+    
+    
+class UserCreate(UserBase):
+    """The model for the user creation
+
+    Args:
+        UserBase (UserBase): The parent class for the models
+    """
+    password: str
